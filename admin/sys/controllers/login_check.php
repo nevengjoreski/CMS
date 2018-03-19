@@ -1,18 +1,22 @@
 <?php
 
-// $username = 'asd@asd.asd';
-// $password = 'pass';
+$file_content = file_get_contents('../../test.txt');
+$login_content = json_decode($file_content, true); //array
+$login_content_obj = json_decode($file_content); //object
 
-// if($username == $_POST['loginEmail'] && 
-// 	$password == $_POST['loginPassword']){
-// 	header('location: ../../index.php');
-// }
+print_r($login_content_obj);
 
-// header('location: login_check.php');
+//so obj
+$username = $login_content_obj->admin->username;
+$password = $login_content_obj->admin->password;
 
- $file_content = file_get_contents('../../test.txt');
+//so array
+// $username = $login_content['admin']['username'];
+// $password = $login_content['admin']['password'];
 
-
-
-echo $file_content;
-
+if($username == $_POST['loginEmail'] &&
+    $password == $_POST['loginPassword']){
+    header('location: ../../index.php');
+} else {
+    header('location: ../../login.php?login=error');
+}
