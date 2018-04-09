@@ -1,47 +1,107 @@
 <?php
-$page = 'Login';
+//    include_once "sys/controllers/user_check.php";
+
+// error_reporting(1);
+$page = 'Pages';
 include_once "sys/includes/head.php";
 include_once "sys/includes/navigation.php";
-
-// error_reporting(0);
 ?>
+    <!-- MAIN  index.php-->
+    <section id="main"  class="mt-4">
+        <div class="container ">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="list-group">
+                        <a href="index.php" class="list-group-item list-group-item-action main-color-bg-red-text-black"> <i class="fas fa-cogs"></i> Dashboard <span class="badge main-color-bg-dark float-right">15</span></a>
+                        <a href="pages.php" class="list-group-item list-group-item-action main-color-bg">     <i class="fas fa-file-alt"></i> Pages <span class="badge main-color-bg-dark float-right">23</span></a>
+                        <a href="posts.php" class="list-group-item list-group-item-action main-color-bg">     <i class="fas fa-edit"></i> Posts     <span class="badge main-color-bg-dark float-right">32</span></a>
+                        <a href="users.php" class="list-group-item list-group-item-action main-color-bg">     <i class="fas fa-users"></i> Users    <span class="badge main-color-bg-dark float-right">41</span></a>
+                    </div>
+                    <h4>Progress</h4>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped main-color-bg-green" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100">66%</div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <!--                WEBSITE OVERVIEW-->
 
-<section id="main" >
-    <div class="container ">
-        <div class="row">
-            <div class="col-md-8 ml-auto mr-auto">
-                <form action="sys/controllers/login_check.php" method="post">
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label for="loginEmail">Email</label>
-                            <input type="email" class="form-control" id="loginEmail" name="loginEmail" placeholder="Email" aria-describedby="emailHelp" value="">
-                            <!-- <small id="emailHelp" class="form-text">We'll never share your email with anyone else.</small> -->
+                    <div class="card main-color-bg">
+                        <div class="row">
+                            <div class="col-1" style=" left:10px;"></div>
+                            <h2 class="col-10 card-header main-color-bg-red-text-black text-center align-bottom neno-header" >Website Overview</h2>
+                            <div class="col-1" style=" left:-10px;"></div>
                         </div>
-                        <div class="form-group forgot-password-hide">
-                            <label for="loginPassword">Password</label>
-                            <input type="password" class="form-control" id="loginPassword" name="loginPassword" placeholder="Password" autocomplete="on">
+                        <div class="card-body">
+                            <div class="card-group">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><a href="#" class="list-group-item list-group-item-action main-color-bg ">  <i class="fas fa-file-alt fa-5x"></i>  <span class="badge main-color-bg-dark float-right">23</span></a>Pages</h5>
+                                        <p class="card-text">This content is a little bit longer.</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><a href="#" class="list-group-item list-group-item-action main-color-bg">     <i class="fas fa-edit fa-5x"></i>  <span class="badge main-color-bg-dark float-right">32</span></a>Posts</h5>
+                                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><a href="#" class="list-group-item list-group-item-action main-color-bg">     <i class="fas fa-users fa-5x"></i>  <span class="badge main-color-bg-dark float-right">41</span></a>Users</h5>
+                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="modal-footer main-color-bg-dark">
-                        <a class="mr-auto main-color-bg-dark forgot-password-hide" href="javascript:hidePasswordField()" >Forgot your password? </a>
-                        <a class="btn main-color-bg-dark d-none" href="index.php">Resend</a>
-                        <button type="submit" class="btn main-color-bg-dark forgot-password-hide">Log In</button>
+                    <!--                TABLE-->
+
+                    <div class="mt-4 card main-color-bg">
+                        <div class="row">
+                            <div class="col-1" style=" left:10px;"></div>
+                            <h2 class="col-10 card-header main-color-bg-red-text-black text-center align-bottom neno-header" > Latest Users</h2>
+                            <div class="col-1" style=" left:-10px;"></div>
+                        </div>
+
+                        <div class="card-body">
+                            <table class="table table-striped table-bordered main-color-bg-white text-center">
+                                <thead class="main-color-bg-red-text-black">
+                                <tr class="">
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Joined</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>John Doe</td>
+                                    <td>asd@asd.asd</td>
+                                    <td>2015-04-14 12:50:44</td>
+                                </tr>
+                                <tr>
+                                    <td>Sam Semov</td>
+                                    <td>asd@asd.asd</td>
+                                    <td>2015-04-14 12:50:44</td>
+                                </tr>
+                                <tr>
+                                    <td>Vesna Zmijanac</td>
+                                    <td>asd@asd.asd</td>
+                                    <td>2015-04-14 12:50:44</td>
+                                </tr>
+                                <tr>
+                                    <td>Stavre Mihailov</td>
+                                    <td>asd@asd.asd</td>
+                                    <td>2015-04-14 12:50:44</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
-    </div>
-
-    <?php
-    if(isset($_GET['login']) && $_GET['login'] == 'error'){
-        ?>
-        <div class='container'>
-            Pogresen Username ili Password
-        </div>
-    <?php } ?>
-
-</section>
+    </section>
 <?php
 include_once "sys/includes/foot.php";
 ?>
